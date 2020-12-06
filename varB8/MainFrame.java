@@ -74,22 +74,22 @@ public class MainFrame extends JFrame {
 
 
     public MainFrame()   {
-        super("Вычисление формулы");
+        super("Calculation of a formula");
         setSize(WIDTH, HEIGHT);
         Toolkit kit = Toolkit.getDefaultToolkit();
         setLocation((kit.getScreenSize().width - WIDTH) / 2, (kit.getScreenSize().height - HEIGHT) / 2);
 
 
         hboxFormulaType.add(Box.createHorizontalGlue());
-        addRadioButton("Формула 1", 1);
-        addRadioButton("Формула 2", 2);
+        addRadioButton("Formula 1", 1);
+        addRadioButton("Formula 2", 2);
         radioButtons.setSelected(radioButtons.getElements().nextElement().getModel(), true);
         hboxFormulaType.add(Box.createHorizontalGlue());
         hboxFormulaType.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
 
 
         hboxVariablesType.add(Box.createHorizontalGlue());
-        addRadioButton2("Пер. 1", 1);
+        addRadioButton2("Variable 1", 1);
 
         textFieldMem1 = new JTextField("0", 15);
         textFieldMem1.setMaximumSize(textFieldMem1.getPreferredSize());
@@ -98,7 +98,7 @@ public class MainFrame extends JFrame {
         textFieldMem1.setEditable(false);
 
 
-        addRadioButton2("Пер. 2", 2);
+        addRadioButton2("Variable 2", 2);
 
         textFieldMem2 = new JTextField("0", 15);
         textFieldMem2.setMaximumSize(textFieldMem2.getPreferredSize());
@@ -107,7 +107,7 @@ public class MainFrame extends JFrame {
         textFieldMem2.setEditable(false);
 
 
-        addRadioButton2("Пер. 3", 3);
+        addRadioButton2("Variable 3", 3);
 
         textFieldMem3 = new JTextField("0", 15);
         textFieldMem3.setMaximumSize(textFieldMem3.getPreferredSize());
@@ -148,7 +148,7 @@ public class MainFrame extends JFrame {
         //hboxVariables.add(Box.createHorizontalGlue());
 
 
-        JLabel labelForResult = new JLabel("Результат:");
+        JLabel labelForResult = new JLabel("Result:");
         textFieldResult = new JTextField("0", 30);
         textFieldResult.setMaximumSize(textFieldResult.getPreferredSize());
         textFieldResult.setEditable(false);
@@ -161,7 +161,7 @@ public class MainFrame extends JFrame {
         hboxResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 
 
-        JButton buttonCalc = new JButton("Вычислить");
+        JButton buttonCalc = new JButton("Calculate");
         buttonCalc.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
                 try {
@@ -177,8 +177,8 @@ public class MainFrame extends JFrame {
                     else result = calculate2(x, y, z);
                     textFieldResult.setText(result.toString());
                 } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(MainFrame.this, "Ошибка в формате записи числа с плавающей точкой",
-                            "Ошибочный формат числа", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(MainFrame.this, "Floating-point writing format error",
+                            "Wrong number format", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
@@ -230,14 +230,14 @@ public class MainFrame extends JFrame {
                         textFieldMem3.setText(result.toString());
                     }
                 } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(MainFrame.this, "Ошибка в формате записи числа с плавающей точкой",
-                            "Ошибочный формат числа", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(MainFrame.this, "Floating-point writing format error",
+                            "Wrong number format", JOptionPane.WARNING_MESSAGE);
                 }
 
             }
         });
 
-        JButton buttonReset = new JButton("Очистить поля");
+        JButton buttonReset = new JButton("Clear fields");
         buttonReset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
                 textFieldX.setText("0");
