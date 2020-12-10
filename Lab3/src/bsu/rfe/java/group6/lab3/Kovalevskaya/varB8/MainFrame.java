@@ -29,7 +29,7 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 
 public class MainFrame extends JFrame {
-    private static final int WIDTH = 700;
+    private static final int WIDTH = 800;
     private static final int HEIGHT = 500;
  // Массив коэффициентов многочлена
     private Double[] coefficients;
