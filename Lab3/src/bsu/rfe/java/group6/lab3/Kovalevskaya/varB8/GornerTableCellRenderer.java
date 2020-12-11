@@ -54,7 +54,7 @@ public class GornerTableCellRenderer implements TableCellRenderer {
             col1 -= Col1;
             String COL1 =  formatter.format(col1);
             if (COL1.length() - 2 <= 3) panel.setBackground(Color.GREEN);
-            else panel.setBackground(Color.WHITE);
+            else panel.setBackground(Color.YELLOW);
         }
         
         if(col==2){
