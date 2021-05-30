@@ -1,2 +1,1 @@
-Lab1 varA
-"# Java6" 
+Lab1 varA 
